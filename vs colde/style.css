@@ -1,0 +1,80 @@
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #0f0f0f, #1a1a2e);
+    color: #000000;
+    text-align: center;
+    padding: 20px;
+}
+h1 {
+    color: #00ffcc;
+    text-shadow: 0 0 20px #000000;
+    font-size: 3em;
+}
+li {
+ font-size: 1.50rem;
+ color: rgb(4, 0, 255);
+ text-shadow: #000000;
+ padding: 10px 0 10px 32px;
+ position: relative;
+ transition:all 0.3s ease;
+}
+.carro {
+    margin: 40px auto;
+    width: 320px;
+    height: 180px;
+    background: linear-gradient(#ff0044, #cc0022);
+    border-radius: 30px 30px 10px 10px;
+    position: relative;
+    box-shadow: 0 0 40px rgba(255, 0, 68, 0.8);
+    animation: dirigir 4s infinite alternate ease-in-out;
+}
+.carro::before {
+    content: '';
+    position: absolute;
+    top: -25px;
+    left: 40px;
+    width: 120px;
+    height: 60px;
+    background: #ff7b00;
+    border-radius: 20px 20px 0 0;
+}
+.roda-frente, .roda-tras {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: #000000;
+    border-radius: 50%;
+    bottom: -25px;
+    border: 8px solid #00ffcc;
+}
+.roda-frente { left: 50px; }
+.roda-tras { right: 50px; }
+
+.roda-frente::after, .roda-tras::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: #00ffcc;
+    border-radius: 50%;
+    top: 15px;
+    left: 15px;
+    animation: girar 0.6s linear infinite;
+}
+
+@keyframes dirigir {
+    from { transform: translateX(-30px); }
+    to { transform: translateX(30px); }
+}
+@keyframes girar {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.som {
+    margin-top: 30px;
+    font-size: 1.4em;
+    color: #ffcc00;
+}
+</style>
